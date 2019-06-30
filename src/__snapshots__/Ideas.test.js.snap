@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ideas should match snapshot 1`] = `
+<div
+  className="ideas-container"
+>
+  <Card
+    deleteIdea={[MockFunction]}
+    description="on-the-go deadliness"
+    id={1}
+    key="1"
+    title="fanny pack for holding throwing knives"
+  />
+</div>
+`;
