@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   deleteIdea = (id) => {
-    const filteredIdeas = this.state.ideas.filter(idea => idea.id != id);
+    const filteredIdeas = this.state.ideas.filter(idea => idea.id !== id);
 
     this.setState({ ideas: filteredIdeas });
   }
