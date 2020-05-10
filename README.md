@@ -25,3 +25,5 @@ npm start
 ```
 5. Follow instructions for installing the [server](https://github.com/turingschool-examples/ideabox-api) IN A DIFFERENT DIRECTORY.
 
+## Code Sand Box Alternative
+A codesandbox template of this repo can also be found <a href="https://codesandbox.io/s/react-iii-ideabox-starter-mz1g2" target="_blank">here<a/>.
