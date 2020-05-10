@@ -8,8 +8,6 @@ class App extends Component {
     super();
     this.state = {
       ideas: [
-        { id: 1, title: 'Prank Travis', description: 'Stick googly eyes on all his stuff' },
-        { id: 2, title: 'Make a secret password app', description: 'So you and your rideshare driver can both know neither one of you is lying' },
       ]
     }
   }
