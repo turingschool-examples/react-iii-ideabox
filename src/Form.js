@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AppContext from './AppContext'
 import './Form.css';
 
-function Form(props) {
+function Form() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
+  const [state, dispatch] = useContext(AppContext)
 
   const submitIdea = event => {
     event.preventDefault();
@@ -12,7 +14,7 @@ function Form(props) {
       title,
       description
     }
-    props.addIdea(newIdea);
+    dispatch({ type: 'ADD_IDEA', idea: newIdea })
     clearInputs();
   }
 
