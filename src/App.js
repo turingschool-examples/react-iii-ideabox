@@ -22,6 +22,10 @@ class App extends Component {
     this.setState({ ideas: filteredIdeas });
   }
 
+  componentDidUpdate() {
+    document.title = `Ideabox (${this.state.ideas.length})`
+  }
+
   render() {
     return(
       <main className='App'>
