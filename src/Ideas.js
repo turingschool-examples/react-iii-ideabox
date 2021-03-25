@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
 import './Ideas.css';
 
-const Ideas = ({ideas, deleteIdea}) => {
+const Ideas = ({ideas, removeIdea}) => {
 
   const ideaCards = ideas.map(idea => {
     return (
@@ -11,7 +12,7 @@ const Ideas = ({ideas, deleteIdea}) => {
         description={idea.description}
         id={idea.id}
         key={idea.id}
-        deleteIdea={deleteIdea}
+        removeIdea={removeIdea}
       />
     )
   })
@@ -21,6 +22,11 @@ const Ideas = ({ideas, deleteIdea}) => {
       {ideaCards}
     </div>
   )
+}
+
+Ideas.proptypes = {
+  ideas: PropTypes.array.isRequired,
+  removeIdea: PropTypes.func.isRequired
 }
 
 export default Ideas;
