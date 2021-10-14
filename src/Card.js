@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Card.css';
 
-const Card = ({ title, description, id, deleteIdea, isFavorited }) => {
-  return (
-    <div className={`card ${isFavorited && 'favorite'}`}>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <button onClick={() => deleteIdea(id)}>🗑</button>
-    </div>
-  )
+class Card extends Component {
+
+  // componentDidMount = () => {
+  //   console.log(`Card "${this.props.title}", componentDidMount`)
+  // }
+  //
+  // componentDidUpdate = () => {
+  //   console.log(`Card "${this.props.title}", componentDidUpdate`)
+  // }
+  //
+  // componentWillUnmount = () => {
+  //   console.log(`Card "${this.props.title}", componentWillUnmount`)
+  // }
+
+  render() {
+    return (
+      <div className='card'>
+      <h3>{this.props.title}</h3>
+      <p>{this.props.description}</p>
+      <button onClick={() => this.props.deleteIdea(this.props.id)}>🗑</button>
+      </div>
+    )
+  }
 }
 
 export default Card;

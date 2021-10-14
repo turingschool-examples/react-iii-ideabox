@@ -12,6 +12,14 @@ class App extends Component {
     }
   }
 
+  // componentDidMount = () => {
+  //   console.log('App, componentDidMount')
+  // }
+  //
+  // componentDidUpdate = () => {
+  //   console.log('App, componentDidUpdate')
+  // }
+
   addIdea = (newIdea) => {
     this.setState({ ideas: [...this.state.ideas, newIdea] });
   }
