@@ -24,7 +24,7 @@ const Ideas = ({ideas, removeIdea}) => {
   )
 }
 
-Ideas.proptypes = {
+Ideas.propTypes = {
   ideas: PropTypes.array.isRequired,
   removeIdea: PropTypes.func.isRequired
 }
