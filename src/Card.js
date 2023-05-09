@@ -12,7 +12,7 @@ const Card = ({ title, description, id, removeIdea, isFavorited }) => {
   )
 }
 
-Card.proptypes = {
+Card.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
