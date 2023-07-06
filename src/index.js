@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import './index.css';
 import App from './App';
 
-// When calculating testing coverage, the following lines tells Jest to ignore the line after it
-/* istanbul ignore next */
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

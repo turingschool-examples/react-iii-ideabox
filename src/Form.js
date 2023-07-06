@@ -1,56 +1,46 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import './Form.css';
 
-class Form extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      description: ''
-    }
-  }
+export default function Form({ addIdea }) {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
-  handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
-  }
 
-  submitIdea = event => {
+  function submitIdea(event) {
     event.preventDefault();
     const newIdea = {
       id: Date.now(),
-      ...this.state
+      title,
+      description
     }
-    this.props.addIdea(newIdea);
-    this.clearInputs();
+    addIdea(newIdea);
+    clearInput();
   }
 
-  clearInputs = () => {
-    this.setState({ title: '', description: '' });
+  function clearInput() {
+    setTitle('');
+    setDescription('');
   }
 
-  render() {
-    return (
-      <form>
-        <input
-          type='text'
-          placeholder='Title'
-          name='title'
-          value={this.state.title}
-          onChange={event => this.handleChange(event)}
-        />
+  return (
+    <form>
+    <input
+      type='text'
+      placeholder='Title'
+      name='title'
+      value={title}
+      onChange={event => setTitle(event.target.value)}
+    />
 
-        <input
-          type='text'
-          placeholder='Description'
-          name='description'
-          value={this.state.description}
-          onChange={event => this.handleChange(event)}
-        />
+    <input
+      type='text'
+      placeholder='Description'
+      name='description'
+      value={description}
+      onChange={event => setDescription(event.target.value)}
+    />
 
-        <button onClick={event => this.submitIdea(event)}>SUBMIT</button>
-      </form>
-    )
-  }
+    <button onClick={event => submitIdea(event)}>SUBMIT</button>
+  </form>
+  )
 }
-
-export default Form;
