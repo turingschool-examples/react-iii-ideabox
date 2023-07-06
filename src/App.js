@@ -1,36 +1,25 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import Ideas from './Ideas';
 import Form from './Form';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      ideas: [
-      ]
-    }
-  }
+export default function App() {
+  const [ideas, setIdeas] = useState([]);
 
-  addIdea = (newIdea) => {
-    this.setState({ ideas: [...this.state.ideas, newIdea] });
-  }
+  function addIdea(newIdea) {
+    setIdeas([...ideas, newIdea]);
+  };
 
-  deleteIdea = (id) => {
-    const filteredIdeas = this.state.ideas.filter(idea => idea.id !== id);
+  const deleteIdea = (id) => {
+    const filteredIdeas = ideas.filter((idea) => idea.id !== id);
+    setIdeas(filteredIdeas);
+  };
 
-    this.setState({ ideas: filteredIdeas });
-  }
-
-  render() {
-    return(
-      <main className='App'>
-        <h1>IdeaBox</h1>
-        <Form addIdea={this.addIdea} />
-        <Ideas ideas={this.state.ideas} deleteIdea={this.deleteIdea} />
-      </main>
-    )
-  }
+  return (
+    <main className='App'>
+      <h1>IdeaBox</h1>
+      <Form addIdea={addIdea} />
+      <Ideas ideas={ideas} deleteIdea={deleteIdea} />
+    </main>
+  );
 }
-
-export default App;
